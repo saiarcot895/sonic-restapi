@@ -5,7 +5,9 @@ export GOROOT=/usr/local/go
 export GOPATH=$(HOME)/go
 export GOBIN=$(GOPATH)/bin
 export GO111MODULE=on
-export GOFLAGS=-modcacherw
+export GOFLAGS=-modcacherw -buildmode=pie
+export CGO_CFLAGS=$(CFLAGS)
+export CGO_CPPFLAGS=$(CPPFLAGS)
 
 all: install build
 

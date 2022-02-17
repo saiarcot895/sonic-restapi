@@ -5,13 +5,10 @@ INCLUDES= \
 	-I$(SWSSCOMMON_SRC)/common \
 	-I/usr/include/swss
 
-CPPFLAGS=-g -std=c++11 $(INCLUDES)
-LDFLAGS=-g -shared
+CPPFLAGS += -g -std=c++11 $(INCLUDES)
 
 SRCS=src/dbconnector.cpp src/producertable.cpp src/producerstatetable.cpp src/table.cpp
 OBJS=$(SRCS:.cpp=.o)
-%.o: %.cpp
-	$(CXX) $(CPPFLAGS) -c $< -o $@
 
 .PHONY: all swsscommon clean install
 
